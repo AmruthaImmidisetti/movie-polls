@@ -8,7 +8,7 @@ Built with **React + Vite, Zustand, Tailwind CSS, Chart.js**, and a custom mock 
 ## 🚀 Live Demo
 
 👉 **Live URL:** https://movie-polls-puce.vercel.app/  
-👉 **Demo Video (2–4 mins):** VIDEO_URL_HERE
+👉 **Demo Video :** https://drive.google.com/file/d/1j-nCXCSL0armNywCCrNbSdjFVJVdEg_l/view?usp=sharing
 
 ---
 
