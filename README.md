@@ -1,16 +1,220 @@
-# React + Vite
+# 🎬 Movie Poll Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A highly interactive, responsive polling application where users can vote on movies, view live results, search, filter, and rate movies.  
+Built with **React + Vite, Zustand, Tailwind CSS, Chart.js**, and a custom mock API simulating real-time updates.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Live Demo
 
-## React Compiler
+👉 **Live URL:** https://YOUR-VERCEL-URL.vercel.app  
+👉 **Demo Video (2–4 mins):** VIDEO_URL_HERE
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 📌 Project Overview
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This project is designed to demonstrate:
+
+- Efficient state management for complex UI
+- Optimistic UI updates for instant feedback
+- Infinite scrolling for large datasets
+- Real-time live poll result updates
+- Accessible and responsive UI components
+- Search + autocomplete, filtering, star rating, and modal interactions
+
+The app provides a smooth, engaging user experience similar to modern interactive platforms.
+
+---
+
+## 🎯 Features
+
+### 🔹 Polls & Voting
+- Displays a list of movie polls.
+- **Infinite scroll** loads more polls automatically as the user scrolls.
+- Users can vote on one option per poll.
+- Voting uses **optimistic UI updates** — results appear instantly.
+- Users can **change their vote** (latest vote updates counts correctly).
+- Vote history persists during the session.
+
+### 🔹 Real-Time Results
+- Poll data refreshes every **8 seconds** to simulate live updates.
+- Progress bars update automatically without page reload.
+
+### 🔹 Modal with Chart
+- Clicking **View Details** opens a modal showing:
+  - Doughnut chart (Chart.js)
+  - Vote statistics
+  - Poll information
+
+### 🔹 Movie Rating System
+- Fully accessible 5-star rating component.
+- Ratings update optimistically and reflect immediately.
+
+### 🔹 Search & Filters
+- Search bar with **autocomplete suggestions**.
+- Filters:
+  - By **Genre** (Action, Comedy, Drama, etc.)
+  - By **Status** (Active, Closed)
+- Dynamic updates — results refresh instantly.
+
+### 🔹 User Feedback
+- Toast notifications (react-hot-toast) for:
+  - Successful voting
+  - Errors
+  - Rollbacks
+
+### 🔹 Responsive & Accessible
+- Mobile-first layout (1 or 2 columns depending on screen size).
+- Keyboard-friendly navigation.
+- ARIA-friendly components & semantic HTML.
+
+---
+
+## 🛠️ Tech Stack
+
+### **Frontend Framework**
+- React (Vite)
+
+### **State Management**
+- Zustand (lightweight and powerful)
+
+### **Styling**
+- Tailwind CSS
+
+### **Data Visualization**
+- Chart.js + react-chartjs-2
+
+### **Notifications**
+- react-hot-toast
+
+### **Mock API**
+- Custom mock backend using JavaScript  
+- Generates 2000 polls for infinite scrolling  
+- Simulates realistic network latency  
+- Supports: fetch polls, submit vote, submit rating, refresh
+
+### **Deployment**
+- Vercel (auto-build and deploy on every push)
+
+---
+
+## 📁 Project Structure
+src/
+├── api/
+│ ├── mockData.js
+│ └── pollsApi.js
+├── components/
+│ ├── PollCard.jsx
+│ ├── PollList.jsx
+│ ├── SearchBar.jsx
+│ ├── FilterDropdown.jsx
+│ ├── ResultsModal.jsx
+│ ├── StarRating.jsx
+│ └── Toasts.jsx
+├── hooks/
+│ ├── useInfiniteScroll.js
+│ └── useLiveRefresh.js
+├── store/
+│ └── usePollStore.js
+├── App.jsx
+├── main.jsx
+├── index.css
+
+
+---
+
+## 🧩 Installation & Setup (Run Locally)
+
+### 1️⃣ Clone the Repository
+
+- git clone https://github.com/YOUR-USERNAME/movie-polls.git
+- cd movie-polls
+  
+### 2️⃣ Install Dependencies
+- npm install
+
+### 3️⃣ Run Development Server
+- npm run dev
+
+### 4️⃣ Build for Production
+- npm run build
+
+### 5️⃣ Preview Production Build
+- npm run preview
+
+
+---
+
+## 🧠 Architectural Decisions
+
+### 🟦 State Management (Zustand)
+
+Zustand is used for global state management because it has a minimal API, requires less boilerplate than Redux, and remains lightweight even as the app grows. [web:26][web:28][web:29]  
+
+It powers: filters, search queries, poll data, infinite scroll state, and modal visibility. [web:30][web:39][web:45]
+
+---
+
+### 🟩 Optimistic UI
+
+Voting and rating interactions use optimistic updates so users see changes instantly without waiting for the server. [web:31][web:37]  
+
+If the API call fails, rollback logic restores the previous state to keep data consistent. [web:31][web:37]
+
+---
+
+### 🟨 Mock API Design
+
+The mock API:
+
+- Generates thousands of polls for realistic load  
+- Supports filtering, search, and paginated fetching  
+- Simulates network latency and random failures to test resilience  
+
+[web:43]
+
+---
+
+### 🟧 Reusable Components & Hooks
+
+Key reusable building blocks:
+
+- `PollCard`, `PollList` for listing and displaying polls  
+- `SearchBar`, `FilterDropdown` for query and filter controls  
+- `StarRating` for rating interactions  
+- `ResultsModal` for showing charted poll results  
+- `useInfiniteScroll`, `useLiveRefresh` hooks for data loading and live updates  
+
+[web:26][web:28][web:34]
+
+---
+
+### 🟪 Accessibility
+
+The UI uses semantic elements (such as `button`, `input`, and dialog-like components) along with appropriate ARIA roles. [web:43]  
+
+Keyboard interactions work for star ratings and modals, improving accessibility for keyboard-only users. [web:43]
+
+---
+
+## 🧪 Testing Checklist
+
+- Infinite scroll loads more polls as you reach the end  
+- Voting works instantly via optimistic updates  
+- Changing a vote updates counts correctly  
+- Live refresh updates the UI automatically  
+- Filters update the poll list dynamically  
+- Search with autocomplete narrows down polls  
+- Modal displays charts and poll details correctly  
+- Rating component is fully functional  
+- Layout is responsive from mobile to desktop  
+- Core flows are keyboard-accessible  
+
+[web:31][web:37][web:43]
+
+---
+
+## 🌐 Deployment
+
+The app is deployed on Vercel, which builds and redeploys automatically on every push to the `main` branch (configurable in Vercel project settings). [web:38][web:41]  
