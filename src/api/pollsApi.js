@@ -2,7 +2,7 @@
 import { generateMockPolls } from './mockData';
 
 // generate server-side data once
-const ALL_POLLS = generateMockPolls(600);
+const ALL_POLLS = generateMockPolls(2000);
 
 /**
  * fetchPolls({ page, pageSize, filters, query })
