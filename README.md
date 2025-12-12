@@ -121,7 +121,7 @@ The app provides a smooth, engaging user experience similar to modern interactiv
 
 ### 1️⃣ Clone the Repository
 
-- git clone https://github.com/YOUR-USERNAME/movie-polls.git
+- git clone https://github.com/AmruthaImmidisetti/movie-polls.git
 - cd movie-polls
   
 ### 2️⃣ Install Dependencies
@@ -203,4 +203,4 @@ Chosen over Redux because:
 ## 🌐 Deployment
 
 - Deployed on **Vercel**  
-- Auto-build & auto-deploy on push to `main`
+- Auto-build & auto-deploy on push to main
