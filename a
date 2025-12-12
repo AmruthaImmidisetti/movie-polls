@@ -1,0 +1,1 @@
+  poll.totalVotes = poll.options.reduce((a, b) = + b.votes, 0);

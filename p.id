@@ -1,0 +1,1 @@
+  const poll = ALL_POLLS.find((p) = === pollId);
