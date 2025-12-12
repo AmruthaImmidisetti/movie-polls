@@ -7,7 +7,7 @@ Built with **React + Vite, Zustand, Tailwind CSS, Chart.js**, and a custom mock 
 
 ## 🚀 Live Demo
 
-👉 **Live URL:** https://YOUR-VERCEL-URL.vercel.app  
+👉 **Live URL:** [https://YOUR-VERCEL-URL.vercel.app  ](https://movie-polls-puce.vercel.app/)
 👉 **Demo Video (2–4 mins):** VIDEO_URL_HERE
 
 ---
@@ -100,26 +100,26 @@ The app provides a smooth, engaging user experience similar to modern interactiv
 ---
 
 ## 📁 Project Structure
-src/
-├── api/
-│ ├── mockData.js
-│ └── pollsApi.js
-├── components/
-│ ├── PollCard.jsx
-│ ├── PollList.jsx
-│ ├── SearchBar.jsx
-│ ├── FilterDropdown.jsx
-│ ├── ResultsModal.jsx
-│ ├── StarRating.jsx
-│ └── Toasts.jsx
-├── hooks/
-│ ├── useInfiniteScroll.js
-│ └── useLiveRefresh.js
-├── store/
-│ └── usePollStore.js
-├── App.jsx
-├── main.jsx
-├── index.css
+- src/
+- ├── api/
+- │ ├── mockData.js
+- │ └── pollsApi.js
+- ├── components/
+- │ ├── PollCard.jsx
+- │ ├── PollList.jsx
+- │ ├── SearchBar.jsx
+- │ ├── FilterDropdown.jsx
+- │ ├── ResultsModal.jsx
+- │ ├── StarRating.jsx
+- │ └── Toasts.jsx
+- ├── hooks/
+- │ ├── useInfiniteScroll.js
+- │ └── useLiveRefresh.js
+- ├── store/
+- │ └── usePollStore.js
+- ├── App.jsx
+- ├── main.jsx
+- ├── index.css
 
 
 ---
@@ -149,72 +149,68 @@ src/
 ## 🧠 Architectural Decisions
 
 ### 🟦 State Management (Zustand)
+Chosen over Redux because:
 
-Zustand is used for global state management because it has a minimal API, requires less boilerplate than Redux, and remains lightweight even as the app grows. [web:26][web:28][web:29]  
-
-It powers: filters, search queries, poll data, infinite scroll state, and modal visibility. [web:30][web:39][web:45]
+- Simpler API  
+- Lightweight  
+- Perfect for managing:
+  - Filters
+  - Search queries
+  - Poll data
+  - Infinite scroll
+  - Modal state
 
 ---
 
 ### 🟩 Optimistic UI
-
-Voting and rating interactions use optimistic updates so users see changes instantly without waiting for the server. [web:31][web:37]  
-
-If the API call fails, rollback logic restores the previous state to keep data consistent. [web:31][web:37]
+- Votes & ratings update instantly  
+- Rollback occurs if API fails  
 
 ---
 
 ### 🟨 Mock API Design
-
-The mock API:
-
-- Generates thousands of polls for realistic load  
-- Supports filtering, search, and paginated fetching  
-- Simulates network latency and random failures to test resilience  
-
-[web:43]
+- Generates 2000+ polls  
+- Supports search, filters, pagination  
+- Simulates latency + random failures  
 
 ---
 
-### 🟧 Reusable Components & Hooks
-
-Key reusable building blocks:
-
-- `PollCard`, `PollList` for listing and displaying polls  
-- `SearchBar`, `FilterDropdown` for query and filter controls  
-- `StarRating` for rating interactions  
-- `ResultsModal` for showing charted poll results  
-- `useInfiniteScroll`, `useLiveRefresh` hooks for data loading and live updates  
-
-[web:26][web:28][web:34]
+### 🟧 Reusable Components
+- **PollCard**  
+- **StarRating**  
+- **SearchBar**  
+- **FilterDropdown**  
+- **ResultsModal**  
+- **useInfiniteScroll**  
 
 ---
 
 ### 🟪 Accessibility
-
-The UI uses semantic elements (such as `button`, `input`, and dialog-like components) along with appropriate ARIA roles. [web:43]  
-
-Keyboard interactions work for star ratings and modals, improving accessibility for keyboard-only users. [web:43]
+- Semantic HTML  
+- ARIA roles  
+- Keyboard-friendly stars & modal  
 
 ---
 
 ## 🧪 Testing Checklist
 
-- Infinite scroll loads more polls as you reach the end  
-- Voting works instantly via optimistic updates  
-- Changing a vote updates counts correctly  
-- Live refresh updates the UI automatically  
-- Filters update the poll list dynamically  
-- Search with autocomplete narrows down polls  
-- Modal displays charts and poll details correctly  
-- Rating component is fully functional  
-- Layout is responsive from mobile to desktop  
-- Core flows are keyboard-accessible  
-
-[web:31][web:37][web:43]
+- Infinite scroll works  
+- Votes update instantly (optimistic)  
+- Changing vote updates counts correctly  
+- Live refresh updates polls  
+- Filters work dynamically  
+- Search autocomplete works  
+- Modal shows chart + details  
+- Rating works  
+- Responsive (mobile → desktop)  
+- Keyboard accessible  
 
 ---
 
 ## 🌐 Deployment
+
+- Deployed on **Vercel**  
+- Auto-build & auto-deploy on push to `main`
+- 
 
 The app is deployed on Vercel, which builds and redeploys automatically on every push to the `main` branch (configurable in Vercel project settings). [web:38][web:41]  
