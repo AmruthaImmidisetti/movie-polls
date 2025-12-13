@@ -1,18 +1,18 @@
-# 🎬 Movie Poll Platform
+# Movie Poll Platform
 
 A highly interactive, responsive polling application where users can vote on movies, view live results, search, filter, and rate movies.  
 Built with **React + Vite, Zustand, Tailwind CSS, Chart.js**, and a custom mock API simulating real-time updates.
 
 ---
 
-## 🚀 Live Demo
+## Live Demo
 
 👉 **Live URL:** https://movie-polls-puce.vercel.app/  
 👉 **Demo Video :** https://drive.google.com/file/d/1j-nCXCSL0armNywCCrNbSdjFVJVdEg_l/view?usp=sharing
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 
 This project is designed to demonstrate:
 
@@ -27,7 +27,7 @@ The app provides a smooth, engaging user experience similar to modern interactiv
 
 ---
 
-## 🎯 Features
+## Features
 
 ### 🔹 Polls & Voting
 - Displays a list of movie polls  
@@ -65,7 +65,7 @@ The app provides a smooth, engaging user experience similar to modern interactiv
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### **Frontend**
 - React (Vite)
@@ -119,29 +119,29 @@ The app provides a smooth, engaging user experience similar to modern interactiv
 
 ## 🧩 Installation & Setup (Run Locally)
 
-### 1️⃣ Clone the Repository
+### 1️ Clone the Repository
 
 - git clone https://github.com/AmruthaImmidisetti/movie-polls.git
 - cd movie-polls
   
-### 2️⃣ Install Dependencies
+### 2️ Install Dependencies
 - npm install
 
-### 3️⃣ Run Development Server
+### 3️ Run Development Server
 - npm run dev
 
-### 4️⃣ Build for Production
+### 4️ Build for Production
 - npm run build
 
-### 5️⃣ Preview Production Build
+### 5️ Preview Production Build
 - npm run preview
 
 
 ---
 
-## 🧠 Architectural Decisions
+## Architectural Decisions
 
-### 🟦 State Management (Zustand)
+### State Management (Zustand)
 Chosen over Redux because:
 
 - Simpler API  
@@ -155,20 +155,20 @@ Chosen over Redux because:
 
 ---
 
-### 🟩 Optimistic UI
+### Optimistic UI
 - Votes & ratings update instantly  
 - Rollback occurs if API fails  
 
 ---
 
-### 🟨 Mock API Design
+### Mock API Design
 - Generates 2000+ polls  
 - Supports search, filters, pagination  
 - Simulates latency + random failures  
 
 ---
 
-### 🟧 Reusable Components
+### Reusable Components
 - **PollCard**  
 - **StarRating**  
 - **SearchBar**  
@@ -178,14 +178,14 @@ Chosen over Redux because:
 
 ---
 
-### 🟪 Accessibility
+### Accessibility
 - Semantic HTML  
 - ARIA roles  
 - Keyboard-friendly stars & modal  
 
 ---
 
-## 🧪 Testing Checklist
+## Testing Checklist
 
 - Infinite scroll works  
 - Votes update instantly (optimistic)  
